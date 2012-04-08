@@ -19,6 +19,13 @@ alias ll='ls -l'
 alias lr='ls -AR'
 alias rtfm='man'
 
+# editor
+alias vi='vim'
+alias v='vim'
+
+# navigation aliases
+alias ..="cd .."
+alias ...="cd ../.."
 
 
 #######################################
@@ -26,7 +33,7 @@ alias rtfm='man'
 #######################################
 
 export SVN_EDITOR=vim
-
+export EDITOR=vim
 
 
 

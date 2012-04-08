@@ -17,7 +17,7 @@ fi
 alias la='ls -A'
 alias ll='ls -l'
 alias lr='ls -AR'
-
+alias rtfm='man'
 
 
 

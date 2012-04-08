@@ -1,0 +1,42 @@
+background yes
+
+#avoid flicker
+double_buffer yes
+
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent yes
+own_window_type override
+
+#borders
+draw_borders no
+border_outer_margin 1
+
+#shades
+draw_shades no
+
+#position
+gap_x 0
+gap_y 6
+alignment top_right
+
+#behavior
+update_interval 10
+
+#color
+default_color  00FF00
+
+#default_shade_color 000000
+#own_window_colour 3d352a
+own_window_colour 000000
+
+#font
+use_xft yes
+xftfont bauhaus:pixelsize=11
+
+#to prevent window from moving
+use_spacer none
+minimum_size 1262 0
+
+TEXT
+${color} Hostname: ${color D7D3C5}${nodename} | ${color} Kernel: ${color D7D3C5}$kernel  |  ${color}Uptime: ${color D7D3C5}${uptime_short}  | ${color }${alignc}Root: ${color D7D3C5}${fs_free /} ${fs_bar 6,60 /} ${fs_used_perc /}%  |  ${color }Home: ${color D7D3C5}${fs_free /home} ${fs_bar 6,60 /home} ${fs_used_perc /home}%  |  ${color }Mem: ${color D7D3C5}$memperc% ${color D7D3C5} ${membar 6,80}  |  ${color}Swap: ${color D7D3C5} $swapperc% ${swapbar 6,80}

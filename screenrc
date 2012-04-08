@@ -1,0 +1,12 @@
+startup_message off
+autodetach on
+
+# turn visual bell on
+vbell on
+
+# define a bigger scrollback, default is 100 lines
+defscrollback 1024
+
+
+#TODO create several screen, some of them splitted
+#screen -t irssi         2       irssi

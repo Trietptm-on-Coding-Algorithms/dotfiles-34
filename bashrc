@@ -24,8 +24,9 @@ alias vi='vim'
 alias v='vim'
 
 # navigation aliases
-alias ..="cd .."
-alias ...="cd ../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias -='cd -'
 
 
 #######################################

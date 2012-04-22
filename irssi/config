@@ -349,7 +349,7 @@ windows = {
   6 = {
     items = (
       {
-        type = "QUERY";
+        type = "CHANNEL";
         chat_type = "IRC";
         name = "#metasploit";
         tag = "Freenode";
@@ -360,5 +360,5 @@ windows = {
 };
 mainwindows = {
   1 = { first_line = "6"; lines = "44"; };
-  6 = { first_line = "1"; lines = "5"; };
+  7 = { first_line = "1"; lines = "5"; };
 };

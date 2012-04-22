@@ -41,9 +41,9 @@ set scrolloff=5
 set autoread
 
 " enable mouse if supported by the terminal
-if has('mouse')
-  set mouse=a
-endif
+"if has('mouse')
+"  set mouse=a
+"endif
 
 " use UTF8 encoding
 set encoding=utf-8

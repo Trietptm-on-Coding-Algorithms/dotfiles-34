@@ -1,0 +1,11 @@
+SLIM : Login Manager
+EarthQuake (gem) : Twitter client
+Xscreensaver
+Awesome : Windows Manager
+urxvt : terminal
+Vim : text editor
+Ranger : file browser
+Weechat : irc client (irssi is great too)
+Pry (gem) : ruby interpreter
+iPython : python interpreter
+

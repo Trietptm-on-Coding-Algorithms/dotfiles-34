@@ -13,3 +13,5 @@ Weechat : irc client (irssi is great too)
 Pry (gem) : ruby interpreter
 iPython : python interpreter
 xrandr : multiscreen
+
+TODO : found solution to SLIM utf8 problem

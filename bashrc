@@ -26,7 +26,6 @@ alias v='vim'
 # navigation aliases
 alias ..='cd ..'
 alias ...='cd ../..'
-alias -='cd -'
 
 
 #######################################
@@ -35,7 +34,12 @@ alias -='cd -'
 
 export SVN_EDITOR=vim
 export EDITOR=vim
-
+export LANG=en_US.utf8
+#export TERM=rxvt-unicode
+# used for Ruby Gem binaries
+if [ -d $HOME/.gem/ruby/1.9.1/bin ]; then
+  export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
+fi
 
 
 #######################################

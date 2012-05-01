@@ -1,3 +1,7 @@
+Have fun with my conf files ;)
+
+Software I use on my Arch laptop (CLI oriented :D):
+
 SLIM : Login Manager
 EarthQuake (gem) : Twitter client
 Xscreensaver
@@ -8,4 +12,4 @@ Ranger : file browser
 Weechat : irc client (irssi is great too)
 Pry (gem) : ruby interpreter
 iPython : python interpreter
-
+xrandr : multiscreen

@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# 00screensaver-lock: lock workstation on hibernate or suspend
+# Put this file in /etc/pm/sleep.d/
+# should be chmod 755 and owned by root:root
+
+DBUS=$(ps aux | grep 'dbus-launch' | grep -v root)
+if [[ ! -z $DBUS ]];then
+ USER=$(echo $DBUS | awk '{print $1}')
+ USERHOME=$(getent passwd $USER | cut -d: -f6)
+ export XAUTHORITY="$USERHOME/.Xauthority"
+ for x in /tmp/.X11-unix/*; do
+   DISPLAYNUM=$(echo $x | sed s#/tmp/.X11-unix/X##)
+   if [[ -f "$XAUTHORITY" ]]; then
+           export DISPLAY=":$DISPLAYNUM"
+   fi
+ done
+else
+ USER=steeve
+ USERHOME=/home/steeve
+ export XAUTHORITY="$USERHOME/.Xauthority"
+ export DISPLAY=":0"
+fi
+
+case "$1" in
+   hibernate|suspend)
+      su $USER -c "/usr/bin/xscreensaver-command -lock" &
+      ;;
+   thaw|resume)
+      ;;
+   *) exit $NA
+      ;;
+esac

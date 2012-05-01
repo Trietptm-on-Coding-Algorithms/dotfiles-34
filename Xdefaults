@@ -1,0 +1,75 @@
+! Transparency
+URxvt*transparent: true
+! URxvt*shading: 40
+! URxvt*tintColor: Blue
+! or
+! URxvt.depth: 32
+! URxvt.background: rgba:3f00/3f00/3f00/dddd
+
+
+! Text color
+URxvt*foreground: White
+URxvt*background: Black
+
+
+! scrollwheel and clipboard support
+URxvt*perl-ext-common: default,vtwheel,url-select,clipboard
+
+
+! Scrollbar
+! URxvt.scrollBar: plain
+URxvt*scrollColor: Grey25
+URxvt*scrollstyle: plain
+URxvt*scrollBar_right: true
+
+URxvt*saveLines: 65535
+
+! clickable URLs
+! URxvt.perl-ext-common: default,matcher
+! URxvt.urlLauncher: /usr/bin/firefox
+! URxvt.matcher.button: 1
+
+! Yankable URL without mouse
+!URxvt*perl-ext: default,url-select
+URxvt*keysym.M-u: perl:url-select:select_next
+URxvt*urlLauncher: google-chrome
+URxvt*underlineURLs: true
+
+! key commands
+! Alt+U : enter selection mode
+! K / J :select next UP/DOWN URLs
+! Return : open URL in browser and quit selection mode
+! O : open URL without quit selection mode
+! Y : copy URL and quit selection mode
+! Esc : cancel selection mode
+
+
+
+
+
+
+! Key combination for Vim and other console programs
+! move word to word with <Ctrl+arrow>
+URxvt*keysym.M-Up:        \033[1;3A
+URxvt*keysym.M-Down:      \033[1;3B
+URxvt*keysym.M-Right:     \033[1;3C
+URxvt*keysym.M-Left:      \033[1;3D
+URxvt*keysym.M-Prior:     \033[5;3~
+URxvt*keysym.M-Next:      \033[6;3~
+URxvt*keysym.M-End:       \033[1;3F
+URxvt*keysym.M-Home:      \033[1;3H
+
+URxvt*keysym.C-Up:        \033[1;5A
+URxvt*keysym.C-Down:      \033[1;5B
+URxvt*keysym.C-Right:     \033[1;5C
+URxvt*keysym.C-Left:      \033[1;5D
+URxvt*keysym.C-Prior:     \033[5;5~
+URxvt*keysym.C-Next:      \033[6;5~
+URxvt*keysym.C-End:       \033[1;5F
+URxvt*keysym.C-Home:      \033[1;5H
+
+
+! Clipboard module (Ctrl+Shift+[C|V])
+URxvt*keysim.Control-Shift-C:       perl:clipboard:copy
+URxvt*keysim.Control-Shift-V:       perl:clipboard:paste
+

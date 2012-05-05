@@ -116,7 +116,8 @@ channels = (
   { name = "#botnets.fr"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#frlab"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#metasploit"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#nepenthes"; chatnet = "FreeNode"; autojoin = "yes"; }
+  { name = "#nepenthes"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#corelan"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {

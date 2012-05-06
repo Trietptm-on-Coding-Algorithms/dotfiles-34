@@ -27,16 +27,10 @@ servers = (
     address = "irc.freenode.org";
     chatnet = "FreeNode";
     port = "6667";
+    password = "[steeve]:XXXXXXXXXX";
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
-  },
-  {
-    address = "FreeNode";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    own_host = "irc.freenode.org";
   }
 );
 
@@ -103,10 +97,9 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
-  Freenode = {
+  FreeNode = {
     type = "IRC";
     nick = "[steeve]";
-    autosendcmd = "/^msg nickserv identify PASSWORD; wait 2000";
   };
 };
 
@@ -117,7 +110,7 @@ channels = (
   { name = "#frlab"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#metasploit"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#nepenthes"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#corelan"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#corelan"; chatnet = "FreeNode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -317,7 +310,8 @@ windows = {
       }
     );
   };
-  3 = {
+  3 = { name = "hilight"; sticky = "yes"; };
+  4 = {
     items = (
       {
         type = "CHANNEL";
@@ -327,7 +321,7 @@ windows = {
       }
     );
   };
-  4 = {
+  5 = {
     items = (
       {
         type = "CHANNEL";
@@ -337,7 +331,7 @@ windows = {
       }
     );
   };
-  5 = {
+  6 = {
     items = (
       {
         type = "CHANNEL";
@@ -347,7 +341,7 @@ windows = {
       }
     );
   };
-  6 = {
+  7 = {
     items = (
       {
         type = "CHANNEL";
@@ -357,9 +351,18 @@ windows = {
       }
     );
   };
-  7 = { name = "hilight"; sticky = "yes"; };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#corelan";
+        tag = "Freenode";
+      }
+    );
+  };
 };
 mainwindows = {
   1 = { first_line = "6"; lines = "44"; };
-  7 = { first_line = "1"; lines = "5"; };
+  3 = { first_line = "1"; lines = "5"; };
 };

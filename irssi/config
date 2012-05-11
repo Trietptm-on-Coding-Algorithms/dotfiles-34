@@ -107,6 +107,7 @@ channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#botnets.fr"; chatnet = "FreeNode"; autojoin = "yes"; },
+  { name = "#malware.lu"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#frlab"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#metasploit"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#nepenthes"; chatnet = "FreeNode"; autojoin = "yes"; },
@@ -357,6 +358,16 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#corelan";
+        tag = "Freenode";
+      }
+    );
+  };
+  9 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#malware.lu";
         tag = "Freenode";
       }
     );

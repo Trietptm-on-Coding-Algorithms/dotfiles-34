@@ -122,6 +122,7 @@ systemmenu = {
 
 multimediamenu = {
   { "vlc", "vlc"},
+  { "cmus", terminal .. " -e cmus"},
   { "brasero", "brasero"}
 }
 

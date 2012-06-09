@@ -20,7 +20,6 @@ require("revelation")
 -- or xcompmgr (lighter but no visual effects)
 awful.util.spawn_with_shell("xcompmgr &")
 
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -48,9 +47,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
--- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+-- beautiful.init("@AWESOME_THEMES_PATH@/default/theme.lua")
+-- beautiful.init("/usr/local/share/awesome/themes/default/theme.lua")
 beautiful.init(awful.util.getdir("config") .. "/themes/steeve/theme.lua")
-
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -74,8 +73,8 @@ layouts =
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+--    awful.layout.suit.spiral,
+--    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
@@ -106,6 +105,7 @@ myawesomemenu = {
 wwwmenu = {
   { "chrome", "google-chrome"},
   { "firefox", "firefox"},
+  { "dwb", terminal .. " -e dwb"},
   { "weechat", terminal .. " -e weechat-curses"},
   { "earthquake", terminal .. " -e earthquake"},
   { "nixnote", "nixnote"},
@@ -152,14 +152,15 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 mytextclock = awful.widget.textclock()
 
 
+
 -- Widgets added
 -- TODO add icons defined in theme.lua
 -- Widget icons
 -- cpuicon = widget({type = "imagebox"})
---cpuicon = wibox.widget.imagebox()
---cpuicon.image = beautiful.widget_cpu
---cpuicon.bg_align = "middle"
---cpuicon.width = 8
+-- cpuicon = wibox.widget.imagebox()
+-- cpuicon.image = beautiful.widget_cpu
+-- cpuicon.bg_align = "middle"
+-- cpuicon.width = 8
 
 
 -- TODO : add local/extern IP, mail, irc and instant message widgets ?
@@ -222,6 +223,7 @@ vicious.register(wifiwidget, vicious.widgets.wifi,
       return " | WLAN0 : " .. args["{ssid}"]
     end
   end, 10, "wlan0")
+
 
 
 -- Create a wibox for each screen and add it
@@ -309,9 +311,9 @@ for s = 1, screen.count() do
     layout:set_right(right_layout)
 
     mywibox[s]:set_widget(layout)
-    
-    
-    
+
+
+
     -- Bottom wibox
     -- TODO center this widget (and add transparency ?)
     bottomwibox[s] = awful.wibox({ position = "bottom", screen = s })
@@ -333,6 +335,7 @@ for s = 1, screen.count() do
     bottomlayout:set_middle(mid_layout)
     bottomwibox[s]:set_widget(bottomlayout)
 
+
 end
 -- }}}
 
@@ -342,20 +345,6 @@ root.buttons(awful.util.table.join(
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
-
-
--- move mouse away at awesome startup (top-right corner)
-local safeCoords = { x = 1366, y = 0 }
-local moveMouseOnStartup = true
-
-local function moveMouse(x_co, y_co)
-  mouse.coords({x=x_co, y=y_co})
-end
-
-if moveMouseOnStartup then
-  moveMouse(safeCoords.x, safeCoords.y)
-end
-
 -- }}}
 
 -- {{{ Key bindings
@@ -370,6 +359,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
     awful.key({ modkey,           }, "e", revelation),
+    awful.key({                   }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Medias/ 2>/dev/null'") end),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -510,21 +500,11 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- FIXME doesn't work except for google chrome ...
-    -- { rule_any = { instance = { "google-chrome", "firefox" } },
-    --  properties = { tag = tags[1][2], maximized_vertical = true, maximized_horizontal = true } },
-    -- { rule_any = { instance = { "weechat", "earthquake" } },
-    --  properties = { tag = tags[1][4], maximized_vertical = true, maximized_horizontal = true } },
-    -- { rule_any = { instance = { "pidgin", "skype" } },
-    --  properties = { tag = tags[1][4], floating = true } },
-    
-    
-
-      -- Set Firefox to always map on tags number 2 of screen 1.
-      -- { rule = { class = "Firefox" },
-      --   properties = { tag = tags[1][2] } },
-    }
-    -- }}}
+    -- Set Firefox to always map on tags number 2 of screen 1.
+    -- { rule = { class = "Firefox" },
+    --   properties = { tag = tags[1][2] } },
+}
+-- }}}
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.

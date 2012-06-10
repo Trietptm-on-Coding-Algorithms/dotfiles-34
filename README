@@ -14,5 +14,6 @@ Pry (gem) : ruby interpreter
 iPython : python interpreter
 CMUS : music player
 xrandr : multiscreen
+dwb: webkit browser with vim binding
 
 TODO : found solution to SLIM utf8 problem

@@ -40,6 +40,14 @@ set scrolloff=5
 " reload files when they are modified by an other editor/software
 set autoread
 
+" set number of columns
+set columns=80
+
+" use VIM fold ({{{{ blah }}})
+" zo : open fold
+" zc : close
+set foldmethod=marker
+
 " enable mouse if supported by the terminal
 "if has('mouse')
 "  set mouse=a

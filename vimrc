@@ -56,3 +56,5 @@ set foldmethod=marker
 " use UTF8 encoding
 set encoding=utf-8
 
+" disable beep in VIM
+set vb t_vb=

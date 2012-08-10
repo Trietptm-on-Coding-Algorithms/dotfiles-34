@@ -350,7 +350,7 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- Lock screen // run Xscreensaver
-    awful.key({ modkey,           }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
     -- Browser (google chrome)
     awful.key({ modkey,           }, "b", function () awful.util.spawn("google-chrome") end),
 

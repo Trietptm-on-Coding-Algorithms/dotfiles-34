@@ -15,5 +15,6 @@ iPython : python interpreter
 CMUS : music player
 xrandr : multiscreen
 dwb: webkit browser with vim binding
+xfe : File explorer
 
-TODO : found solution to SLIM utf8 problem
+

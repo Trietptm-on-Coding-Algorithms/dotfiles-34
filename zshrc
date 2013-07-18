@@ -58,3 +58,14 @@ export TERM=rxvt-unicode
 
 
 setopt NO_BEEP
+setopt interactivecomments
+
+bindkey "^[OH" beginning-of-line
+					 bindkey "^[OF" end-of-line
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^R" history-incremental-search-backward
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+

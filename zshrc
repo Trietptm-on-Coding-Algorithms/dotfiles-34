@@ -53,15 +53,18 @@ alias ...='cd ../..'
 
 export SVN_EDITOR=vim
 export EDITOR=vim
-export LANG=en_US.utf8
+export LANG=en_GB.utf8
 export TERM=rxvt-unicode
+
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
 
 
 setopt NO_BEEP
 setopt interactivecomments
 
 bindkey "^[OH" beginning-of-line
-					 bindkey "^[OF" end-of-line
+bindkey "^[OF" end-of-line
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^[[3~" delete-char

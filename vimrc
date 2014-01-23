@@ -76,6 +76,8 @@ set autoread
 " set number of columns
 "set columns=80
 
+" Paste mode shortcut
+set pastetoggle=<F2>
 
 " use VIM fold ({{{{ blah }}})
 " zo : open fold

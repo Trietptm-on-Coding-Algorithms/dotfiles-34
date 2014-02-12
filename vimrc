@@ -91,6 +91,9 @@ set pastetoggle=<F2>
 " Clear hl
 :nmap <F3> :nohlsearch<CR>
 
+" Switch number line on/off
+:nmap <F5> :set number!<CR>
+
 " display file explorer
 :nmap <F4> :NERDTreeToggle<CR>
 

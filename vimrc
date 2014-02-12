@@ -22,6 +22,12 @@ Bundle 'ervandew/supertab'
 Bundle 'Rykka/riv.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/MultipleSearch'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/powerline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'ap/vim-css-color'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'Valloric/YouCompleteMe'
 
 "
 " Brief help
@@ -38,7 +44,10 @@ Bundle 'vim-scripts/MultipleSearch'
 set number
 
 " syntax highlight
-syntax on
+syntax enable
+" vim-colors-solarized plugin
+"set background=dark
+"colorscheme solarized
 
 " indentation
 " set cindent
@@ -78,6 +87,12 @@ set autoread
 
 " Paste mode shortcut
 set pastetoggle=<F2>
+
+" Clear hl
+:nmap <F3> :nohlsearch<CR>
+
+" display file explorer
+:nmap <F4> :NERDTreeToggle<CR>
 
 " use VIM fold ({{{{ blah }}})
 " zo : open fold
